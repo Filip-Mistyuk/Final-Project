@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(233, 183, 121);
+    padding: 0;
+}
+
+
+/* Стилізація списку навігації */
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+
+/* Стилізація пунктів списку (лінків) */
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+
+/* Стилізація лінків */
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}

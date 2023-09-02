@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -10,10 +12,21 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
     </head>
     <body>
         <h1>Portfolio<h1> 
+ 
+        <img src="media/logo.png" alt="Логотип"> 
+
+        <header>
+            <ul class="nav-links">
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Создать проект</a></li>
+                <li><a href="#">Мои проекти</a></li>
+                <li><a href="/Registation">Registation</a></li>
+            </ul>
+        </header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
