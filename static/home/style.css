@@ -1,3 +1,31 @@
-.links {
-    background-color: brown;
+body {
+    background-color: #FAF0E6;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Зробити всі лінки рядком */
+}
+
+
+/* Стилізація пунктів списку (лінків) */
+
+.nav-links li {
+    margin-right: 20px;
+    /* Відступ між лінками */
+}
+
+
+/* Стилізація лінків */
+
+.nav-links li a {
+    text-decoration: none;
+    /* Видалити підкреслення */
+    color: #333;
+    /* Колір тексту лінків */
+    font-weight: bold;
+    /* Жирний шрифт */
 }
