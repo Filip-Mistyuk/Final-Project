@@ -1,0 +1,10 @@
+{% comment %} {% extends "index.html" %} {% endcomment %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.name.label_tag }} {{ form.name }}
+    {{ form.title.label_tag }} {{ form.title }}
+    {{ form.code.label_tag }} {{ form.code }}
+    {{ form.description.label_tag }} {{ form.description }}
+    <button type="submit">Создать проект</button>
+</form>

@@ -19,7 +19,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         
-        <h1>Portfolio<h1> 
+        {% comment %} <h1>Portfolio<h1>  {% endcomment %}
 
         {% comment %} <div class="logo-container">
 
@@ -28,13 +28,27 @@
         </div> {% endcomment %}
 
         <header>
-            <ul class="nav-links">
-                <li><a class="links" href="#">О нас</a></li>
-                <li><a class="links" href="#">Создать проект</a></li>
-                <li><a class="links" href="#">Мои проекти</a></li>
-                <li><a class="links" href="/Registation">Registation</a></li>
-            </ul>
+            <div class="top-nav">
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="{% url 'create_project' %}">Создать Проект</a></li>
+                    <li><a href="project_rec/">Интересные проекты</a></li>
+                    <li><a href="#">Регистрация</a></li>
+                </ul>
+            </div>
         </header>
+
+        <div class="content">
+            <h1>Portfolio</h1>
+            <h2>Добро пожаловать на наш сайт</h2>
+            <p>Наш сайт был создан для новичков програмистов которые хотят показать свои проеты</p>
+            <p>Здесь вы можете загрузить свой код и оставить на хранение либо сделать его публичным и показать его другим програмистам.</p>
+            <ul>
+                <li>Хранение</li>
+                <li>Публикация в сеть</li>
+                <li>Поист нужно вам кода для испольшование его в своих целях</li>
+            </ul>
+        </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

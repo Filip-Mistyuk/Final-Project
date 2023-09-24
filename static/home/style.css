@@ -2,30 +2,71 @@ body {
     background-color: #FAF0E6;
 }
 
-.nav-links {
+.top-nav {
+    background-color: #333;
+    /* Цвет фона панели */
+    color: #fff;
+    /* Цвет текста */
+    padding: 10px 0;
+    /* Отступы сверху и снизу */
+    text-align: right;
+    /* Выравнивание текста вправо */
+}
+
+.top-nav ul {
     list-style-type: none;
+    /* Убирает маркеры списка */
     padding: 0;
-    margin: 0;
-    display: flex;
-    /* Зробити всі лінки рядком */
 }
 
-
-/* Стилізація пунктів списку (лінків) */
-
-.nav-links li {
+.top-nav ul li {
+    display: inline;
+    /* Размещает элементы списка в строку */
     margin-right: 20px;
-    /* Відступ між лінками */
+    /* Отступы между пунктами меню */
 }
 
-
-/* Стилізація лінків */
-
-.nav-links li a {
+.top-nav ul li a {
     text-decoration: none;
-    /* Видалити підкреслення */
-    color: #333;
-    /* Колір тексту лінків */
+    /* Убирает подчеркивание у ссылок */
+    color: #fff;
+    /* Цвет текста ссылок */
     font-weight: bold;
-    /* Жирний шрифт */
+    /* Жирный шрифт */
+    font-size: 18px;
+    /* Размер текста */
+}
+
+.content {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    text-align: center;
+    /* Выравнивание текста по правому краю */
+}
+
+.content h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.content p {
+    font-size: 16px;
+    color: #666;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.content ul li {
+    font-size: 14px;
+    color: #888;
+}
+
+.content h1 {
+    font-size: 35px;
+    color: #8ea185;
 }

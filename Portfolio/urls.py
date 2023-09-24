@@ -24,6 +24,7 @@ urlpatterns = (
             path("users/", include("users.urls")),
             path("project_rec/", include(("project_rec.urls", "project_rec"))),
             path('', include(("home.urls"))), 
+            path('create_project/', include(("home.urls", "home"))),
         ]    
         + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
         + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
