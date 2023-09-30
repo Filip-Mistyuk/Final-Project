@@ -30,10 +30,20 @@
         <header>
             <div class="top-nav">
                 <ul>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="{% url 'create_project' %}">Создать Проект</a></li>
-                    <li><a href="project_rec/">Интересные проекты</a></li>
-                    <li><a href="#">Регистрация</a></li>
+                    <div class="nav-info">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="{% url 'create_project' %}">Создать Проект</a></li>
+                        <li><a href="project_rec/">Интересные проекты</a></li>
+                    </div>
+                    <div class="log-nav">
+                        {% if request.user.is_authenticated %}
+                        <li><a class="reg_nav" href="{%url 'logout'%}">Logout</a></li>
+                        {%else%}
+                        <li><a class="reg_nav" href="{%url 'login'%}">Login</a></li>
+                    
+                            <li><a class="reg_nav" href="{%url 'register'%}">Register</a></li>
+                        {%endif%}
+                    </div>    
                 </ul>
             </div>
         </header>

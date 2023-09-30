@@ -8,15 +8,12 @@ body {
     color: #fff;
     /* Цвет текста */
     padding: 10px 0;
-    /* Отступы сверху и снизу */
-    text-align: right;
-    /* Выравнивание текста вправо */
 }
 
 .top-nav ul {
     list-style-type: none;
     /* Убирает маркеры списка */
-    padding: 0;
+    /* padding: 0; */
 }
 
 .top-nav ul li {
@@ -69,4 +66,30 @@ body {
 .content h1 {
     font-size: 35px;
     color: #8ea185;
+}
+
+.reg_nav {
+    text-decoration: none;
+    /* Убирает подчеркивание у ссылок */
+    color: #fff;
+    /* Цвет текста ссылок */
+    font-weight: bold;
+    /* Жирный шрифт */
+    font-size: 23px;
+    padding: 0 20px;
+}
+
+.reg_nav:hover {
+    transition-duration: 0.2s;
+    color: rgb(246, 164, 164);
+    font-size: 21px;
+    transition-property: 0.2s;
+}
+
+.log_nav {
+    text-align: left;
+}
+
+.nav-info {
+    text-align: right;
 }

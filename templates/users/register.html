@@ -1,0 +1,21 @@
+{% include "users/base.html"%}
+{% block title %}
+<title>register</title>
+{% endblock %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    {#{{ form.as_p }}#}
+    {% for f in form %}
+    <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">{{f.label}}</label>
+        <div class="form-control">{{f}}</div>
+      </div>
+    <br>
+    {% endfor %}
+    <br>
+    <input class="btn btn-primary" type="submit">
+</form>
+</div>
+{% endblock %}
