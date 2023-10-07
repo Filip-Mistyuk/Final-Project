@@ -1,10 +1,27 @@
 {% comment %} {% extends "index.html" %} {% endcomment %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.name.label_tag }} {{ form.name }}
-    {{ form.title.label_tag }} {{ form.title }}
-    {{ form.code.label_tag }} {{ form.code }}
-    {{ form.description.label_tag }} {{ form.description }}
-    <button type="submit">Создать проект</button>
-</form>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <title>Create Project</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="create-title">Create a New Project</h1>
+        
+            <form class="project-form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Create Project</button>
+            </form>
+        
+        
+        <a class="home-link" href="{% url 'home' %}">Back to Home</a>
+    </div>
+</body>
+</html>
