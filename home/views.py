@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from .models import Project
 from .forms import ProjectForm
@@ -8,20 +9,18 @@ from .forms import ProjectForm
 class HomePageView(TemplateView):
     template_name = 'home/index.html'
 
+@login_required
 def create_project(request):
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
-            # Получите объект Project из формы, но не сохраняйте его пока
             project = form.save(commit=False)
             
-            # Добавьте пользователя к проекту (если это необходимо)
-            project.user = request.user  # Предположим, что у вас есть аутентифицированный пользователь
+            project.user = request.user 
             
-            # Теперь можно сохранить объект Project с файлом
             project.save()
             
-            # После успешного создания проекта, перенаправьте пользователя на другую страницу
+            # После успешного создания проекта перенаправьте пользователя на другую страницу
             return render(request, 'home/index.html')
     else:
         form = ProjectForm()

@@ -43,9 +43,15 @@
                     
                             <li><a class="reg_nav" href="{%url 'register'%}">Register</a></li>
                         {%endif%}
-                    </div>    
+                    </div>
+                    {% if user.is_authenticated %}
+                        <p class="welcome">Welcome, {{ user.username }}!</p>
+                    {% else %}
+                        <p class="Log-info">Not logged in, please login or register!</p>
+                    {% endif %}    
                 </ul>
-            </div>
+                
+            </div>         
         </header>
 
         <div class="content">
