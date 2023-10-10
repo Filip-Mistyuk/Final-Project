@@ -1,6 +1,6 @@
 {% extends "users/base.html" %}
 
-{% block title %}Register{% endblock %}
+{% comment %} {% block title %}Register{% endblock %} {% endcomment %}
 
 {% block content %}
     <h2>Register</h2>
@@ -10,7 +10,8 @@
         {{ form.as_p }}
         <button type="submit">Register</button>
     </form>
-    
+    <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    <a class="home-link" href="{% url 'home' %}">Back to Home</a>
     {# Можете добавить ссылку на сброс пароля здесь, если это нужно #}
     {# <p>Forgot your password? <a href="{% url 'password_reset' %}">Reset it</a></p> #}
 {% endblock %}

@@ -32,3 +32,11 @@ class ProjectCreateView(CreateView):
     form_class = ProjectForm
     template_name = 'create_project.html'
     success_url = reverse_lazy('home')
+    
+@login_required
+def my_projects(request):
+    current_user = request.user
+
+    projects = Project.objects.filter(user=current_user)
+
+    return render(request, 'home/my_projects.html', {'projects': projects})    
