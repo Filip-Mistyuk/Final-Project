@@ -21,10 +21,10 @@
                 {% for project in projects %}
                 <div class="project-card">
                     <h2>{{ project.user }}</h2>
-                    <h3>{{ project.name }}</h3>
-                    <p>{{ project.title }}</p>
+                    <h3>Name: {{ project.name }}</h3>
+                    {% comment %} <p>{{ project.title }}</p>
                     <p>{{ project.description }}</p>
-                    <p>{{ project.project_file }}</p>
+                    <p>{{ project.project_file }}</p> {% endcomment %}
                 </div>
                 {% endfor %}
             </div>

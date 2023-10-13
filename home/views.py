@@ -15,16 +15,15 @@ def create_project(request):
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
             project = form.save(commit=False)
-            
-            project.user = request.user 
-            
+            project.user = request.user
             project.save()
-            
-            # После успешного создания проекта перенаправьте пользователя на другую страницу
+            files = request.FILES.getlist('files')
+            for f in files:
+                # Сохранение каждого файла в проекте
+                Project.objects.create(project=project, file=f)
             return render(request, 'home/index.html')
     else:
         form = ProjectForm()
-    
     return render(request, 'home/create_project.html', {'form': form})
 
 class ProjectCreateView(CreateView):
@@ -39,4 +38,7 @@ def my_projects(request):
 
     projects = Project.objects.filter(user=current_user)
 
-    return render(request, 'home/my_projects.html', {'projects': projects})    
+    return render(request, 'home/my_projects.html', {'projects': projects})   
+
+def about_us(request):
+    return render(request, 'home/about_us.html') 

@@ -14,7 +14,7 @@
     <div class="form-container">
         <h1 class="create-title">Create a New Project</h1>
         
-            <form class="project-form" method="post">
+            <form class="project-form" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Create Project</button>
