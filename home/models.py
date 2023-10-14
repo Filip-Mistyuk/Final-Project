@@ -13,13 +13,13 @@ class Project(models.Model):
     type = models.CharField(max_length=100, choices=PROJECT_TYPES, default='DEFAULT_VALUE')
     # code = models.CharField(max_length=10000, unique=True)
     description = models.TextField()
-    project_file = models.FileField(upload_to='files/', default="test.py")
-    project_file2 = models.FileField(upload_to='files/', default="test.py")
-    project_file3 = models.FileField(upload_to='files/', default="test.py")
-    project_file4 = models.FileField(upload_to='files/', default="test.py")
+    project_file = models.FileField(upload_to='files/', default="there is no file.py")
+    project_file2 = models.FileField(upload_to='files/', default="there is no file.py")
+    project_file3 = models.FileField(upload_to='files/', default="there is no file.py")
+    project_file4 = models.FileField(upload_to='files/', default="there is no file.py")
 
     def __str__(self):
-        return self.title
+        return self.name
 
 
 # class ProjectFile(models.Model):

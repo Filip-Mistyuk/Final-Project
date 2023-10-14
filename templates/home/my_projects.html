@@ -20,6 +20,7 @@
             <div class="project-list">
                 {% for project in projects %}
                 <div class="project-card">
+                    <a class="pro_link" href="{% url 'project_detail' project.id %}">
                     <h2>{{ project.user }}</h2>
                     <h3>Name: {{ project.name }}</h3>
                     {% comment %} <p>{{ project.title }}</p>

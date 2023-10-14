@@ -1,11 +1,23 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <title>About US</title>
 </head>
 <body>
     <h2>О нас</h2>
-    <p>Здесь вы можете разместить свое описание и инструкции использования вашего сайта.</p>
+    <p>Здесь вы можете загрузить свой код и оставить на хранение либо сделать его публичным и показать его другим програмистам.</p>
+    <div class="about_us_container">
+        <h1 class="aboutus-info">Инструкция</h1>
+        <p class="about_us_p">1: Вам нужно зарегестрироватся или войти в свой аккаунт</p>
+        <p class="about_us_p">2: Вам нужно нужно нажать Создать Проект</p>
+        <p class="about_us_p">3: Дальше нужно заполнить все поля(По возможности)</p>
+        <p class="about_us_p">4: Нажимаем кнопку Submit и дальше можно посмотреть наш проект в меню Мои Проекти</p>
+    </div>
+    <a class="home-link-meta" href="{% url 'home' %}">Back to Home</a>
 </body>
 </html>

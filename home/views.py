@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
@@ -42,3 +42,7 @@ def my_projects(request):
 
 def about_us(request):
     return render(request, 'home/about_us.html') 
+
+def project_detail(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    return render(request, 'home/project_detail.html', {'project': project})

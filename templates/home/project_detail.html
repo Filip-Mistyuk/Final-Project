@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <title>{{ project.name }}</title>
+</head>
+<body>
+
+    <div class="menu-container">
+        <h1 class"project_label">{{ project.name }}</h1>
+        <a class="home-link2" href="{% url 'home' %}">Back to Home</a>
+    </div>    
+        
+    <div class="file-container">
+        <div class="project-details">
+            <h2 class="pro-info">Project Details:</h2>
+            <h3 class="user-info">User: {{ project.user }}</h3>
+            <h3 class="user-info">Name: {{ project.name }}</h3>
+            <h3 class="user-info">Type: {{ project.type }}</h3>
+            <div class="description">
+                <p class="description-meta">Description:</p>
+                <p class="desc-meta">{{ project.description }}</p>
+            </div>
+            <p>Project Files:</p>
+            <ul class="pro-ul">
+                <li class="pro-li"><a class="pro-a" href="{{ project.project_file.url }}" download>{{ project.project_file.name }}</a></li>
+                <li class="pro-li"><a class="pro-a" href="{{ project.project_file2.url }}" download>{{ project.project_file2.name }}</a></li>
+                <li class="pro-li"><a class="pro-a" href="{{ project.project_file3.url }}" download>{{ project.project_file3.name }}</a></li>
+                <li class="pro-li"><a class="pro-a" href="{{ project.project_file4.url }}" download>{{ project.project_file4.name }}</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
